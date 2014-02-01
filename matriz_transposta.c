@@ -36,6 +36,7 @@ void menu( int *escolha) {
     printf ("Digite 2 para editar a matriz\n");
     printf ("Digite 3 para calcular a transposta da matriz\n");
     printf ("Digite 4 para imprimir a matriz\n");
+    printf ("Digite 5 para sair\n");
     printf ("\nDigite sua escolha\n");
     scanf ("%d", escolha);
 }
@@ -118,6 +119,9 @@ main () {
 
             case 4: imprime_matriz( matriz, linhas, colunas);
                     break;
+
+            case 5: printf ("Encerrando programa\n");
+                    exit (1);
 
             default: printf ("'%d' não existe nas opções\n", escolha);
                     break;
