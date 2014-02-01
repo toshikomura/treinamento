@@ -30,6 +30,16 @@ int **criar_matriz ( int linhas, int colunas) {
 
 }
 
+int checa_matriz ( int **matriz) {
+    if (matriz) {
+        printf ("AVISO: A matriz precisa ser criada para executar esta operação\n");
+        return 0;
+    }
+    else {
+        return 1;
+    }
+}
+
 void menu( int *escolha) {
     printf ("\nEscolha uma das seguinte opções\n");
     printf ("Digite 1 para criar a matriz\n");
@@ -116,13 +126,16 @@ main () {
                     preenche_matriz ( matriz, linhas, colunas);
                     break;
 
-            case 2: editar_matriz( matriz, linhas, colunas);
+            case 2: if ( checa_matriz( matriz))
+                        editar_matriz( matriz, linhas, colunas);
                    break;
 
-            case 3: matriz = calcular_transposta( matriz, linhas, colunas);
+            case 3: if (checa_matriz( matriz))
+                        matriz = calcular_transposta( matriz, linhas, colunas);
                    break;
 
-            case 4: imprime_matriz( matriz, linhas, colunas);
+            case 4: if (checa_matriz( matriz))
+                        imprime_matriz( matriz, linhas, colunas);
                     break;
 
             case 5: printf ("Encerrando programa\n");
