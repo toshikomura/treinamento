@@ -43,13 +43,18 @@ void menu( int *escolha) {
 
 void editar_matriz ( int **matriz, int linhas, int colunas) {
 
-    int l, c, novo_valor;
+    int l, c;
 
     printf ("Editar matriz\n");
-    printf ("Digite a linha para editar\n");
-    scanf ("%d", &l);
-    printf ("Digite a coluna para editar\n");
-    scanf ("%d", &c);
+
+    do {
+        printf ("Digite a linha para editar\n");
+        scanf ("%d", &l);
+        printf ("Digite a coluna para editar\n");
+        scanf ("%d", &c);
+    }
+    while ( l >= linhas || l < 0 || c >= colunas || c < 0);
+
     printf ("Valor de %d %d é %d\n", l, c, matriz[l][c]);
     printf ("Digite o novo valor de %d %d\n", l, c);
     scanf ("%d", &matriz[l][c]);
